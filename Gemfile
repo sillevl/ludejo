@@ -61,5 +61,8 @@ gem 'dotenv-rails'
 
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 
+gem 'mqtt'
+
+
 
 
