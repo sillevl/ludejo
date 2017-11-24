@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/map' => 'page#map', :as => 'map'
+
   root 'static_pages#home'
 
   get '/help' => 'static_pages#help', :as => 'help'

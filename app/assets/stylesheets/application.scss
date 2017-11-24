@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require material_icons
+ *= require leaflet
  */
  @import "materialize/components/color";
  $primary-color: color("red", "darken-1") !default;
