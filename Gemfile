@@ -56,3 +56,9 @@ gem 'jquery-rails', '4.3.1'
 gem 'leaflet-rails'
 
 gem 'devise'
+gem 'omniauth-facebook'
+
+gem 'dotenv-rails'
+
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
+
