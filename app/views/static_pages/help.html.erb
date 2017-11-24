@@ -1,27 +1,70 @@
 <% provide(:title, "Info") %>
 
 
-      <div class="card grey darken-1">
-        <div class="card-content white-text">
-          <div class="center jumbotron">
+<div class="card grey darken-1">
+    <div class="card-content white-text">
+        <div class="center jumbotron">
             <h1>Info</h1>
-            <p>Dit is de info pagina</p>
             <p>Lees de FAQ sectie bij problemen of vragen over de werking van de applicatie. </p>
-          </div>
         </div>
-      </div>
+    </div>
+</div>
 
-      <div class="card grey darken-1">
-      <div class="card-content white-text">
+<div class="card grey darken-1">
+    <div class="card-content white-text">
         <div>
-          <h4>FAQ</h4>
+            <h4>FAQ</h4>
+            <div>
+                <div class="row">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">Hoe log ik in op de applicatie?</span>
+                            <p>
+                                Als u nog geen account heeft kunt u zich registreren in de sign-up tab rechts bovenaan in de navigatie bar.
+                                Indien u wel een account heeft kunt u inloggen met uw e-mail adres en het paswoord dat u gebruikt heeft om uzelf te registreren.
+                                U kunt ook inloggen via facebook.
+                            </p>
+                        </div>
+                        <div class="card-action">
+                        <%= link_to "Login", new_user_session_path %>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">Hoe registreer ik mezelf op de applicatie?</span>
+                            <p>
+                                Als u nog geen account heeft kunt u zich registreren in de sign-up tab rechts bovenaan in de navigatie bar.
+                                Tijdens de registratie moet u uw voornaam, achternaam, e-mailadres en een wachtwoord opgeven.
+                            </p>
+                        </div>
+                        <div class="card-action">
+                        <%= link_to "Sign-up", new_user_registration_path %>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">Hoe kan ik een monster voederen?</span>
+                            <p>
+                                Om een monster te kunnen voederen moet u ingeloggen op de applicatie, eens dat u ingelogd bent kunt u op de map kijken waar de monsters zich het dichtst bevinden.
+                                Om een monster te voederen moet u zich naar het monster begeven, een schermpje zal tevoorschijn komen die u vraagt als u het monster wilt voederen.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      </div>
-      <div class="card grey darken-1">
-      <div class="card-content white-text">
+    </div>
+</div>
+<div class="card grey darken-1">
+    <div class="card-content white-text">
         <div>
-          <h4>Contact</h4>
+            <h4>Contact</h4>
         </div>
-      </div>
-      </div>
+    </div>
+</div>
