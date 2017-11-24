@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'api/monsters'
+
   get '/map' => 'page#map', :as => 'map'
 
   root 'static_pages#home'
