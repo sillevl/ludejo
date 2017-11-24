@@ -16,7 +16,7 @@
  *= require leaflet
  */
 @import "materialize/components/color";
-$primary-color: color("red", "darken-1") !default;
+$primary-color: color("red", "darken-4") !default;
 
 @import 'materialize';
 
@@ -67,4 +67,8 @@ body#monsters{
     .mobile-hide{
          display: none;
     }
+}
+
+.content{
+    margin-bottom: 60px !important;
 }
