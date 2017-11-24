@@ -11,6 +11,7 @@ require 'json'
 # TODO: should be the URL instead of a file
 sources = ["speelruimte.json"]
 monster_names = "monster.json"
+monster_images = "image.json"
 
 sources.each do |source|
     file = File.join(File.dirname(__FILE__), source)
@@ -35,5 +36,12 @@ monsters.each_with_index do |monster, index|
     data = JSON.parse(File.read(file))
     monster.name = data[index]
     monster.health = Random.new.rand(0..100)
+    monster.save
+end
+
+monsters.each do |monster|
+    file = File.join(File.dirname(__FILE__), monster_images)
+    data = JSON.parse(File.read(file))
+    monster.image = data[Random.new.rand(0..13)]
     monster.save
 end
