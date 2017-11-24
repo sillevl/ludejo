@@ -10,9 +10,9 @@ require 'json'
 
 # TODO: should be the URL instead of a file
 sources = ["speelruimte.json"]
+monster_names = "monster.json"
 
 sources.each do |source|
-    puts source
     file = File.join(File.dirname(__FILE__), source)
     data = JSON.parse(File.read(file))
     data.each do |item|
@@ -27,4 +27,13 @@ sources.each do |source|
 
         Monster.create(monster)
     end
+end
+
+monsters = Monster.all
+monsters.each_with_index do |monster, index|
+    file = File.join(File.dirname(__FILE__), monster_names)
+    data = JSON.parse(File.read(file))
+    monster.name = data[index]
+    monster.health = Random.new.rand(0..100)
+    monster.save
 end

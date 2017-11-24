@@ -6,25 +6,26 @@
       <a href="#" data-activates="mobile_menu" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
           <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Monsters", monsters_path %></li>
+          <li><%= link_to "Map", map_path %></li>
           <li><%= link_to "Info", help_path %></li>
           <li><%= link_to "About", about_path %></li>
           <% unless current_user %>
           <li id="nav-sign-up" class="nav-items"><%= link_to "Sign-up", new_user_registration_path %></li>
           <li id="nav-login" class="nav-items"><%= link_to "Login", new_user_session_path %></li>
           <% else %>
-          <li><%= link_to "Map", map_path %></li>
           <li class="nav-items"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
           <% end %>
       </ul>
       <ul class="side-nav" id="mobile_menu">
         <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Map", map_path %></li>
         <li><%= link_to "Info", help_path %></li>
         <li><%= link_to "About", about_path %></li>
         <% unless current_user %>
         <li id="nav-sign-up" class="nav-items"><%= link_to "Sign-up", new_user_registration_path %></li>
         <li id="nav-login" class="nav-items"><%= link_to "Login", new_user_session_path %></li>
         <% else %>
-        <li><%= link_to "Map", map_path %></li>
         <li class="nav-items"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% end %>
       </ul>
