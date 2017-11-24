@@ -6,6 +6,8 @@
       <a href="#" data-activates="mobile_menu" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
           <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Monsters", monsters_path %></li>
+          <li><%= link_to "Map", map_path %></li>
           <li><%= link_to "Info", help_path %></li>
           <li><%= link_to "About", about_path %></li>
           <% unless current_user %>
