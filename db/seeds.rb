@@ -21,8 +21,8 @@ sources.each do |source|
         monster = {
             id: item["ID"],
             name: "monster #{item["ID"]}",
-            latitude: item["json_geometry"]["coordinates"][0],
-            longitude: item["json_geometry"]["coordinates"][1]
+            latitude: item["json_geometry"]["coordinates"][1],
+            longitude: item["json_geometry"]["coordinates"][0]
         }
 
         Monster.create(monster)
