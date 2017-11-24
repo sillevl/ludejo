@@ -16,7 +16,7 @@ $(".page.map").ready ->
           monster.latitude,
           monster.longitude],
           {icon: L.icon(
-            iconUrl: "assets/monsters/00000001.jpeg"
+            iconUrl: "/assets/monsters/" + monster.image
             iconSize: [ 48, 48]
             iconAnchor: [ 24, 24 ])
           }
