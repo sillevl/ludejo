@@ -34,7 +34,7 @@ $primary-color: color("red", "darken-4") !default;
     }
 }
 
-body#homepage{
+body.static_pages.home{
     background: url("/assets/backgrounds/background_home.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -42,7 +42,7 @@ body#homepage{
     background-size: cover;
 }
 
-body#monsters{
+body.monsters{
     background: url("/assets/backgrounds/background_monsters.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;

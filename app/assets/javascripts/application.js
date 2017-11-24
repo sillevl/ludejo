@@ -15,6 +15,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require materialize-sprockets
+//= require jquery-readyselector
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
