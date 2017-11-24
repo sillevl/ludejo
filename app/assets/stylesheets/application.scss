@@ -14,4 +14,7 @@
  *= require_self
  *= require material_icons
  */
+ @import "materialize/components/color";
+ $primary-color: color("red", "darken-1") !default;
+
  @import 'materialize';
