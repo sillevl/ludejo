@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171124101417) do
+ActiveRecord::Schema.define(version: 20171124111649) do
 
   create_table "feeds", force: :cascade do |t|
     t.decimal "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "monster_id"
   end
 
   create_table "monsters", force: :cascade do |t|
