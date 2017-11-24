@@ -24,6 +24,10 @@ $(document).on('turbolinks:load', function() {
     if(window.location.pathname == "/") {
         document.getElementsByTagName("body")[0].setAttribute("id", "homepage");
     }
+    if(window.location.pathname == "/monsters") {
+        document.getElementsByTagName("body")[0].setAttribute("id", "monsters");
+    }
+
     if (window.location.href.indexOf('#_=_') > 0) {
         window.location = window.location.href.replace(/#.*/, '');    
     }
