@@ -20,6 +20,20 @@
 
  @import 'materialize';
 
+ .page-footer {
+    padding-top: 0;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+.footer-copyright{
+    .container{
+        margin-left: 1% !important;
+    }
+}
+
  body#homepage{
     background: url("/assets/backgrounds/background_home.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -34,3 +48,9 @@
         
     }
 }
+
+@media screen and (min-width: 0px) and (max-width: 720px) {
+    .mobile-hide{
+         display: none;
+    }
+  }
