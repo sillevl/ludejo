@@ -17,7 +17,7 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
-    //$(".button-collapse").sideNav();
+    $(".button-collapse").sideNav();
 
 
 });
