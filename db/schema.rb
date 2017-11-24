@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171124105914) do
+ActiveRecord::Schema.define(version: 20171124111649) do
 
   create_table "feeds", force: :cascade do |t|
     t.decimal "score"
