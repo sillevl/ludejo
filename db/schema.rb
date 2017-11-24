@@ -12,6 +12,12 @@
 
 ActiveRecord::Schema.define(version: 20171124102518) do
 
+  create_table "feeds", force: :cascade do |t|
+    t.decimal "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "models", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -27,6 +33,16 @@ ActiveRecord::Schema.define(version: 20171124102518) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_models_on_email", unique: true
     t.index ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true
+  end
+
+  create_table "monsters", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.string "health"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
