@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'api/monsters'
+  get 'api/hungry'
+  get 'api/happy'
 
   get '/map' => 'page#map', :as => 'map'
 
