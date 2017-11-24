@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require leaflet
 //= require rails-ujs
 //= require turbolinks
 //= require materialize-sprockets
@@ -18,6 +19,10 @@
 
 $(document).on('turbolinks:load', function() {
     $(".button-collapse").sideNav();
+
+    if (window.location.href.indexOf('#_=_') > 0) {
+        window.location = window.location.href.replace(/#.*/, '');    
+    }
 
 
 });
