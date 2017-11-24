@@ -7,7 +7,7 @@
             <div class="card-content">
             <span class="card-title"><%= monster.name %></span>
             <div class="progress" style="height: 20px;">
-                <div class="determinate" style="width: <%= monster.health %>%"></div>
+                <div class="determinate <%= monster.health_color %>" style="width: <%= monster.health %>%"></div>
             </div>
             </div>
             <% if false %>
