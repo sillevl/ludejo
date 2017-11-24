@@ -12,6 +12,7 @@
           <li id="nav-sign-up" class="nav-items"><%= link_to "Sign-up", new_user_registration_path %></li>
           <li id="nav-login" class="nav-items"><%= link_to "Login", new_user_session_path %></li>
           <% else %>
+          <li><%= link_to "Map", map_path %></li>
           <li class="nav-items"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
           <% end %>
       </ul>
@@ -23,6 +24,7 @@
         <li id="nav-sign-up" class="nav-items"><%= link_to "Sign-up", new_user_registration_path %></li>
         <li id="nav-login" class="nav-items"><%= link_to "Login", new_user_session_path %></li>
         <% else %>
+        <li><%= link_to "Map", map_path %></li>
         <li class="nav-items"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% end %>
       </ul>
