@@ -1,6 +1,12 @@
 class Monster < ApplicationRecord
     has_many :feeds, dependent: :destroy
 
+    def health 
+        health = self[:health].to_i
+        health += self.feeds.count
+        health
+    end
+
     def health_color
         value = ""
         case hunger_state

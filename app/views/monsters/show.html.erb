@@ -35,11 +35,16 @@
     </div>
     <div class="col s6 card">
         <h4>Laatste snoepjes</h4>
-        <ul>
-            <% @monster.feeds.each do |feed| %>
-                <li><%= time_ago_in_words(feed.created_at) van {username}%></li>
-            <% end %>
-        </ul>
+        
+        <% if @monster.feeds.any? %>
+            <ul>
+                <% @monster.feeds.each do |feed| %>
+                    <li><%= time_ago_in_words(feed.created_at) %> van {username}</li>
+                <% end %>
+            </ul>
+        <% else %>
+            <p>Ik heb nog geen eten gekregen :(</p>
+        <% end %>
     </div>
 </div>
 
