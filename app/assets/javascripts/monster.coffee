@@ -5,8 +5,9 @@ $ ->
 
   onLocationFound = (e) ->
     radius = e.accuracy / 2
-    L.marker(e.latlng).addTo(map).bindPopup('You are within ' + radius + ' meters from this point').openPopup()
-    L.circle(e.latlng, radius).addTo map
+    # L.marker(e.latlng).addTo(map).bindPopup('You are within ' + radius + ' meters from this point').openPopup()
+    L.circleMarker(e.latlng, {color: "#FF0000", fillOpacity: 1}).addTo(map)
+    # L.circle(e.latlng, radius).addTo map
     return
 
   map.on 'locationfound', onLocationFound
@@ -16,7 +17,10 @@ $ ->
       pinpoint = L.marker([
           monster.latitude,
           monster.longitude],
-          {}
-        #   {icon: busIcon}
+          {icon: L.icon(
+            iconUrl: "assets/monsters/00000001.jpeg"
+            iconSize: [ 48, 48]
+            iconAnchor: [ 24, 24 ])
+          }
         ).addTo(map);
       window.Monsters[monster.id] = pinpoint
