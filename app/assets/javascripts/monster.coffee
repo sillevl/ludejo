@@ -1,11 +1,22 @@
 $ ->
   window.Monsters = {}
 
+  map.locate({setView: true, watch: true, maxZoom: 16}) 
+
+  onLocationFound = (e) ->
+    radius = e.accuracy / 2
+    L.marker(e.latlng).addTo(map).bindPopup('You are within ' + radius + ' meters from this point').openPopup()
+    L.circle(e.latlng, radius).addTo map
+    return
+
+  map.on 'locationfound', onLocationFound
+
   $.ajax(url: "/api/monsters.json").done (monsters) ->
     for monster in monsters
       pinpoint = L.marker([
-          tracker.last_coordinate.latitude,
-          tracker.last_coordinate.longitude],
-          {icon: busIcon}
+          monster.latitude,
+          monster.longitude],
+          {}
+        #   {icon: busIcon}
         ).addTo(map);
-      window.Monsters[tracker.deveui] = pinpoint
+      window.Monsters[monster.id] = pinpoint
