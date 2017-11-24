@@ -6,14 +6,18 @@
         </div>
         <div class="col s6">
             <h2><%= @monster.name %></h2>
-            <p>Honger: <%= @monster.health %> / 100</p>
+            <p>Hallo ik heb vandaag <%= @monster.hunger_state_text %> honger.</p>
+            <p>Honger status: <%= @monster.health %> / 100</p>
             <div class="progress" style="height: 20px;">
-                <div class="determinate" style="width: <%= @monster.health %>%"></div>
+                <div class="determinate <%= @monster.health_color %>" style="width: <%= @monster.health %>%"></div>
             </div>
             <p>feeds / dag</p>
             <p>feeds / week</p>
             <p>feeds / maand</p>
         </div>
+    </div>
+    <div class="row center">
+        <%= link_to "Geef mij een snoepje !", "/monsters/#{@monster.id}/feed/1", class: "btn pulse #{@monster.health_color}", method: "post" %>
     </div>
 </div>
 
@@ -30,7 +34,12 @@
         </div>
     </div>
     <div class="col s6 card">
-        <h4>Laatste voedingen</h4>
+        <h4>Laatste snoepjes</h4>
+        <ul>
+            <% @monster.feeds.each do |feed| %>
+                <li><%= time_ago_in_words(feed.created_at) van {username}%></li>
+            <% end %>
+        </ul>
     </div>
 </div>
 
