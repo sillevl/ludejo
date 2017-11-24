@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
-
+Latitude: <%= @monster.latitude %>  </br>
+Longitude: <%= @monster.longitude %>  </br>
+<div id='detail_map'></div>
 <%= link_to 'Edit', edit_monster_path(@monster) %> |
 <%= link_to 'Back', monsters_path %>
