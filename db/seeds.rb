@@ -34,5 +34,6 @@ monsters.each_with_index do |monster, index|
     file = File.join(File.dirname(__FILE__), monster_names)
     data = JSON.parse(File.read(file))
     monster.name = data[index]
+    monster.health = Random.new.rand(0..100)
     monster.save
 end
