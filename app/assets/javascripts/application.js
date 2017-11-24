@@ -20,5 +20,9 @@
 $(document).on('turbolinks:load', function() {
     $(".button-collapse").sideNav();
 
+    if (window.location.href.indexOf('#_=_') > 0) {
+        window.location = window.location.href.replace(/#.*/, '');    
+    }
+
 
 });
