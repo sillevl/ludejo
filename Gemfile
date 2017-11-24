@@ -54,3 +54,5 @@ gem 'material_icons'
 gem 'json'
 gem 'jquery-rails', '4.3.1'
 gem 'leaflet-rails'
+
+gem 'devise'
