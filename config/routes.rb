@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :models
   get 'static_pages/home'
 
   get 'static_pages/help'
