@@ -1,13 +1,11 @@
-$ ->
+$(".page.map").ready ->
   window.Monsters = {}
 
   map.locate({setView: true, watch: true, maxZoom: 16}) 
 
   onLocationFound = (e) ->
     radius = e.accuracy / 2
-    # L.marker(e.latlng).addTo(map).bindPopup('You are within ' + radius + ' meters from this point').openPopup()
     L.circleMarker(e.latlng, {color: "#FF0000", fillOpacity: 1}).addTo(map)
-    # L.circle(e.latlng, radius).addTo map
     return
 
   map.on 'locationfound', onLocationFound
