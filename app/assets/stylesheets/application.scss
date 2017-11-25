@@ -69,11 +69,12 @@ body.monsters{
     }
 }
 
-.content{
+div.content{
+    height: fit-content;
     margin-bottom: 60px !important;
 }
 
-.card h2{
+h2.card{
     margin: 0px;
 }
 
