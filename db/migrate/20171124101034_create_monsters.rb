@@ -3,7 +3,7 @@ class CreateMonsters < ActiveRecord::Migration[5.1]
     create_table :monsters do |t|
       t.string :name
       t.string :image
-      t.string :health
+      t.integer :health
       t.float :latitude
       t.float :longitude
 

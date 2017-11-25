@@ -1,28 +1,36 @@
 
 <div class="row card white">
     <div class="row">
-        <div class="col s4">
+        <div class="col m4 s12 center">
             <%= image_tag "monsters/#{@monster.image}" %>
         </div>
-        <div class="col s6">
+        <div class="col m6 s12">
             <h2><%= @monster.name %></h2>
-            <p>Hallo ik heb vandaag <%= @monster.hunger_state_text %> honger.</p>
-            <p>Honger status: <%= @monster.health %> / 100</p>
+            <p>Hallo ik ben <%= @monster.name %>, en heb vandaag <%= @monster.hunger_state_text %> honger. Kom je eens langs?</p>
+            <p>Gezondheid: <%= @monster.health %> / 100</p>
             <div class="progress" style="height: 20px;">
                 <div class="determinate <%= @monster.health_color %>" style="width: <%= @monster.health %>%"></div>
             </div>
-            <p>feeds / dag</p>
-            <p>feeds / week</p>
-            <p>feeds / maand</p>
+            <p>Ik krijg 5 snoepjes per dag</p>
         </div>
     </div>
+    
     <div class="row center">
-        <%= link_to "Geef mij een snoepje !", "/monsters/#{@monster.id}/feed/1", class: "btn pulse #{@monster.health_color}", method: "post" %>
+        <% if @monster.hunger_state == :no %>
+            <p>Je ben <span id="distance_to_monster">-</span> km verwijderd van mij verwijderd. Ik heb nog niet veel honger, maar een bezoekje is altijd leuk!</p>
+        <% else %>
+            <p>Je ben <span id="distance_to_monster">-</span> km verwijderd van mij verwijderd. Wil je mij wat eten geven? ik heb <%= @monster.hunger_state_text %> honger.</p>
+        <% end %>
+    </div>
+    
+    
+    <div class="row center">
+        <%= link_to "Geef mij een snoepje !", "/monsters/#{@monster.id}/feed/1", {class: "btn pulse #{@monster.health_color}", id: "feed_me", method: "post" }%>
     </div>
 </div>
 
 <div class="row">
-    <div class="col s6">
+    <div class="col s12 m6">
         <div id="monster_detail_map" 
             data-monster-id="<%= @monster.id %>" 
             data-monster-longitude="<%= @monster.longitude %>"
@@ -33,7 +41,7 @@
             <h4>Geschiedenis</h4>
         </div>
     </div>
-    <div class="col s6 card">
+    <div class="col s12 m6 card">
         <h4>Laatste snoepjes</h4>
         
         <% if @monster.feeds.any? %>
