@@ -13,10 +13,12 @@
 //= require jquery
 //= require leaflet
 //= require rails-ujs
-//= require turbolinks
+//= //require turbolinks
 //= require materialize-sprockets
 //= require jquery-readyselector
 //= require_tree .
+//= require Chart.bundle
+//= require chartkick
 
 $(document).on('turbolinks:load', function() {
     $(".button-collapse").sideNav();

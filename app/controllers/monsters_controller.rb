@@ -17,6 +17,12 @@ class MonstersController < ApplicationController
     @monster = Monster.new
   end
 
+  def feed
+    monster = Monster.find(params[:id])
+    monster.feeds.create(score: 1)
+    redirect_to monster, notice: 'Monster was successfully created.'
+  end
+
   # GET /monsters/1/edit
   def edit
   end

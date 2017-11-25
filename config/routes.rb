@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks", registrations: 'registrations'  }
 
   resources :monsters
+
+  post 'monsters/:id/feed/:score' => 'monsters#feed', :as => 'feed_monster'
+
+  resources :feeds
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
