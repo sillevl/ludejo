@@ -19,6 +19,8 @@ class MonstersController < ApplicationController
 
   def feed
     monster = Monster.find(params[:id])
+    monster.health += 1
+    monster.save
     monster.feeds.create(score: 1, author_id: current_user.id)
     redirect_to monster, notice: 'Monster was successfully created.'
   end

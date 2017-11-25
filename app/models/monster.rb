@@ -6,11 +6,11 @@ class Monster < ApplicationRecord
         return false
     end
 
-    def health 
-        health = self[:health].to_i
-        health += self.feeds.count
-        health
-    end
+    # def health 
+    #     health = self[:health].to_i
+    #     health += self.feeds.count
+    #     health
+    # end
 
     def health_color
         value = ""
