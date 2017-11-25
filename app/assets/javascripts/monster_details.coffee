@@ -23,6 +23,7 @@ $(".monsters.show").ready ->
     if distance > 100
       $('#feed_me').addClass 'disabled'
       $('#feed_me').removeClass 'pulse'
+      $('feed_me_text').hide
     else
 
 

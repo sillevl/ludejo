@@ -29,6 +29,7 @@
             
             <% unless @monster.fed? %>
                 <%= link_to "Geef mij een snoepje !", "/monsters/#{@monster.id}/feed/1", {class: "btn pulse #{@monster.health_color}", id: "feed_me", method: "post" }%>
+                <p id="feed_me_text">Je bent nog te ver van me vandaan. Kom dichterbij en speel ook eens in de buurt.</p>
             <% else %>
                 Je hebt mij vandaag al een snoepje gegeven. Ik moet eventje rusten.
             <% end %>
@@ -61,8 +62,8 @@
         
         <% if @monster.feeds.any? %>
             <ul>
-                <% @monster.feeds.each do |feed| %>
-                    <li><%= time_ago_in_words(feed.created_at) %> van {username}</li>
+                <% @monster.feeds.reverse_each do |feed| %>
+                    <li><%= time_ago_in_words(feed.created_at) %> geleden van <%= feed.user_name %></li>
                 <% end %>
             </ul>
         <% else %>
