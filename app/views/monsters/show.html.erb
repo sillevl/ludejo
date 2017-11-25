@@ -25,7 +25,22 @@
     
     
     <div class="row center">
-        <%= link_to "Geef mij een snoepje !", "/monsters/#{@monster.id}/feed/1", {class: "btn pulse #{@monster.health_color}", id: "feed_me", method: "post" }%>
+        <% if current_user %>
+            
+            <% unless @monster.fed? %>
+                <%= link_to "Geef mij een snoepje !", "/monsters/#{@monster.id}/feed/1", {class: "btn pulse #{@monster.health_color}", id: "feed_me", method: "post" }%>
+            <% else %>
+                Je hebt mij vandaag al een snoepje gegeven. Ik moet eventje rusten.
+            <% end %>
+            
+        <% else %>
+            <p>Je moet aangemeld zijn om mij te voeden.</p>      
+            <p>
+                <%= link_to "Meld je aan", new_user_session_path, class: "btn" %>
+                <%= link_to "Maak een account", new_user_registration_path, class: "btn"  %>
+            </p>
+        <% end %>
+        
     </div>
 </div>
 

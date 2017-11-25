@@ -1,6 +1,11 @@
 class Monster < ApplicationRecord
     has_many :feeds, dependent: :destroy
 
+    def fed?
+        return self.feeds.last.created_at > Time.now - 1.minutes if self.feeds.any?
+        return false
+    end
+
     def health 
         health = self[:health].to_i
         health += self.feeds.count
