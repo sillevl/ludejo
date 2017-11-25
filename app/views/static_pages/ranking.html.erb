@@ -1,0 +1,42 @@
+<% provide(:title, "Ranking") %>
+
+<div class="row">
+    <table class="highlight">
+    <thead>
+      <tr>
+          <th style="width:15%;">Nummer</th>
+          <th style="width:15%;">Monster</th>
+          <th style="width:15%;">Naam</th>
+          <th>Honger</th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <% @ranking_monsters.each_with_index do |monster, index| %>
+      <tr>
+        <td>
+            <h2>#<%= index+1 %></h2>
+        </td>
+        <td>
+
+            <br>
+            <a href="<%= url_for(monster) %>">
+            <%= image_tag "monsters/#{monster.image}", :class => "ranking-image"  %>
+        </td>
+        <td>
+          <%= monster.name %>
+        </td>
+        <td>
+        <br>
+        <div class="progress" style="height: 20px; text-align:center;">
+            <div class="determinate <%= monster.health_color %>" style="width: <%= monster.health %>%"><%= monster.health %>%</div>
+        </div>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+

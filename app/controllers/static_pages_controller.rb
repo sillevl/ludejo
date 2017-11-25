@@ -9,4 +9,8 @@ class StaticPagesController < ApplicationController
 
   def about
   end
+
+  def ranking
+    @ranking_monsters = Monster.order(health: :desc)
+  end
 end

@@ -17,6 +17,8 @@
 //= require materialize-sprockets
 //= require jquery-readyselector
 //= require_tree .
+//= require Chart.bundle
+//= require chartkick
 
 $(document).on('turbolinks:load', function() {
     $(".button-collapse").sideNav();
