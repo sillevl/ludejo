@@ -7,6 +7,24 @@ $(".monsters.show").ready ->
   }
   window.monster_map = L.map('monster_detail_map').setView([monster.longitude, monster.latitude], 15);
 
+  onlocationfound = (e) ->
+    window.my_location = { 
+      latitude: e.latitude
+      longitude: e.longitude
+      latlng: e.latlng
+    }
+    monster_location = L.latLng(monster.longitude, monster.latitude)
+    L.circleMarker(e.latlng, {color: "#FF0000", fillOpacity: 1}).addTo(window.monster_map)
+    distance = e.latlng.distanceTo(monster_location) 
+    $("#distance_to_monster").text(Math.round(distance / 100, 2)/10)
+    latlongs = [e.latlng, monster_location]
+    polyline = L.polyline(latlongs, {color: "#FF0000", weight: 2}).addTo(window.monster_map);
+
+
+  window.monster_map.locate() 
+  window.monster_map.on('locationfound',onlocationfound)
+
+
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
       maxZoom: 18,

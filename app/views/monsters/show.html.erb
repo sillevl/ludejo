@@ -19,9 +19,9 @@
     
     <div class="row center">
         <% if @monster.hunger_state == :no %>
-            <p>Je ben 3km verwijderd van mij verwijderd. Ik heb nog niet veel honger, maar een bezoekje is altijd leuk!</p>
+            <p>Je ben <span id="distance_to_monster">-</span> km verwijderd van mij verwijderd. Ik heb nog niet veel honger, maar een bezoekje is altijd leuk!</p>
         <% else %>
-            <p>Je ben 3km verwijderd van mij verwijderd. Wil je mij wat eten geven? ik heb <%= @monster.hunger_state_text %> honger.</p>
+            <p>Je ben <span id="distance_to_monster">-</span> km verwijderd van mij verwijderd. Wil je mij wat eten geven? ik heb <%= @monster.hunger_state_text %> honger.</p>
         <% end %>
     </div>
     
