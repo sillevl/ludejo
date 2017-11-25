@@ -6,14 +6,12 @@
         </div>
         <div class="col s6">
             <h2><%= @monster.name %></h2>
-            <p>Hallo ik heb vandaag <%= @monster.hunger_state_text %> honger.</p>
+            <p>Hallo ik ben <%= @monster.name %>, en heb vandaag <%= @monster.hunger_state_text %> honger. Kom je eens langs?</p>
             <p>Honger status: <%= @monster.health %> / 100</p>
             <div class="progress" style="height: 20px;">
                 <div class="determinate <%= @monster.health_color %>" style="width: <%= @monster.health %>%"></div>
             </div>
-            <p>feeds / dag</p>
-            <p>feeds / week</p>
-            <p>feeds / maand</p>
+            <p>Ik krijg 5 snoepjes per dag</p>
         </div>
     </div>
     
