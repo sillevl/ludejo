@@ -4,23 +4,29 @@
     <table class="highlight">
     <thead>
       <tr>
+          <th style="width:15%;">Nummer</th>
           <th style="width:15%;">Monster</th>
-          <th>Monster info</th>
+          <th style="width:15%;">Naam</th>
+          <th>Honger</th>
       </tr>
     </thead>
 
     <tbody>
-    <% @ranking_monsters.each do |monster| %>
+    <% @ranking_monsters.each_with_index do |monster, index| %>
       <tr>
         <td>
-            <%= monster.name %>
+            <h2>#<%= index+1 %></h2>
+        </td>
+        <td>
 
             <br>
             <a href="<%= url_for(monster) %>">
             <%= image_tag "monsters/#{monster.image}", :class => "ranking-image"  %>
         </td>
         <td>
-        <%= monster.name %>
+          <%= monster.name %>
+        </td>
+        <td>
         <br>
         <div class="progress" style="height: 20px; text-align:center;">
             <div class="determinate <%= monster.health_color %>" style="width: <%= monster.health %>%"><%= monster.health %>%</div>
