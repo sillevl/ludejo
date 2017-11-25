@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20171124125421) do
   create_table "monsters", force: :cascade do |t|
     t.string "name"
     t.string "image"
-    t.string "health"
+    t.integer "health"
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", null: false
