@@ -20,6 +20,12 @@ $(".monsters.show").ready ->
     latlongs = [e.latlng, monster_location]
     polyline = L.polyline(latlongs, {color: "#FF0000", weight: 2}).addTo(window.monster_map);
 
+    if distance > 100
+      $('#feed_me').addClass 'disabled'
+      $('#feed_me').removeClass 'pulse'
+    else
+
+
 
   window.monster_map.locate() 
   window.monster_map.on('locationfound',onlocationfound)

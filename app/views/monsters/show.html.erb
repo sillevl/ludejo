@@ -25,7 +25,7 @@
     
     
     <div class="row center">
-        <%= link_to "Geef mij een snoepje !", "/monsters/#{@monster.id}/feed/1", class: "btn pulse #{@monster.health_color}", method: "post" %>
+        <%= link_to "Geef mij een snoepje !", "/monsters/#{@monster.id}/feed/1", {class: "btn pulse #{@monster.health_color}", id: "feed_me", method: "post" }%>
     </div>
 </div>
 
