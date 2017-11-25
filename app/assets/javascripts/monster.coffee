@@ -1,7 +1,7 @@
 $(".page.map").ready ->
   window.Monsters = {}
 
-  map.locate({setView: true, watch: true, maxZoom: 16}) 
+  map.locate({setView: true, watch: true, maxZoom: 13}) 
 
   onLocationFound = (e) ->
     radius = e.accuracy / 2
