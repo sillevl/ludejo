@@ -13,10 +13,12 @@
 ActiveRecord::Schema.define(version: 20171124125421) do
 
   create_table "feeds", force: :cascade do |t|
-    t.decimal "score"
+    t.integer "score"
+    t.integer "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "monster_id"
+    t.index ["author_id"], name: "index_feeds_on_author_id"
   end
 
   create_table "monsters", force: :cascade do |t|
