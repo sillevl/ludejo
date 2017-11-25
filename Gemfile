@@ -63,6 +63,8 @@ gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'b
 
 gem 'mqtt'
 
+gem 'groupdate'
+gem 'chartkick'
 
 
 
