@@ -20,7 +20,7 @@
 //= require Chart.bundle
 //= require chartkick
 
-$(document).on('turbolinks:load', function() {
+$(document).ready( function() {
     $(".button-collapse").sideNav();
     $(".dropdown-button").dropdown();
 
